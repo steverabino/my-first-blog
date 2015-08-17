@@ -9,9 +9,6 @@
       </div>
       <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
       <p>{{ post.text|linebreaks }}</p>
-      <h4>
-        <a class="btn btn-default" href="http://www.st-andrews.ac.uk/nightline/wp-content/uploads/puppies.jpeg">I Like This!</a>
-      </h4>
     </div>
   {% endfor %}
 

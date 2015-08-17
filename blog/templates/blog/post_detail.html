@@ -4,16 +4,19 @@
 
   <div class="post">
       {% if post.published_date %}
-        <div class="date">
-          {{ post.published_date }}
-        </div>
+        {{ post.published_date }}
+      {% else %}
+      <h4>
+        <a class="btn btn-default" href="{% url 'blog.views.post_publish' pk=post.pk %}">Publish</a>
+      </h4>
       {% endif %}
       <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
       <p>{{ post.text|linebreaks }}</p>
       <h4>
-      <a class="btn btn-default" href="http://www.st-andrews.ac.uk/nightline/wp-content/uploads/puppies.jpeg">I Like This!</a>
+      <a class="btn btn-default" href="http://www.st-andrews.ac.uk/nightline/wp-content/uploads/puppies.jpeg"><span class="glyphicon button-text">I Like This!</span></a>
       {% if user.is_authenticated %}
-        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"> edit</span></a>
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil button-text"> edit</span></a>
+        <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
       {% endif %}
     </h4>
   </div>

@@ -14,7 +14,11 @@
   margin-left: 40px;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, .button-text {
+  font-family: 'Lobster', cursive;
+}
+
+span .glyphicon {
   font-family: 'Lobster', cursive;
 }
 
